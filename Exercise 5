@@ -1,0 +1,34 @@
+/* 5. Amazing Numbers
+
+Write a function, which as input will receive a number.
+Check and print if it is amazing or not into the following format:
+
+"{number} Amazing? {True or False}"
+
+An amazing number includes the digit 9 the sum of its digits.
+
+Examples for amazing numbers are 1233 (1 + 2 + 3 + 3 = 9), 583472 (5 + 8 + 3 + 4 + 7 + 2 = 29) */
+
+
+function amazingNumber(anyNumber){
+    let anyNumberString = anyNumber.toString();
+    let anyNumberArr = anyNumberString.split('');
+
+    sum = 0;
+
+    for (let i = 0; i < anyNumberArr.length; i++){
+        sum += Number(anyNumberArr[i]);
+    }
+
+    let finalNumber = sum.toString();
+
+    if (finalNumber.includes('9') == true){
+        console.log(`${anyNumber} Amazing? True`);
+    } else {
+        console.log(`${anyNumber} Amazing? False`);
+    }
+}
+
+
+amazingNumber(1233);
+amazingNumber(999);
